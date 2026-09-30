@@ -48,6 +48,9 @@ namespace COMP2139_ICE.Controllers
         {
             if (ModelState.IsValid)
             {
+                project.StartDate = DateTime.SpecifyKind(project.StartDate, DateTimeKind.Utc);
+                project.EndDate = DateTime.SpecifyKind(project.EndDate, DateTimeKind.Utc);
+
                 _context.Add(project);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
