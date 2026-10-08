@@ -22,5 +22,8 @@ public class Project
     public DateTime EndDate { get; set; }
 
     [Display(Name = "Status")]
-    public string Status { get; set; } = "Pending";
+    public string Status { get; set; } = "New";
+
+    // ProjectTask ile One-to-Many əlaqəsi
+    public List<ProjectTask>? Tasks { get; set; }
 }

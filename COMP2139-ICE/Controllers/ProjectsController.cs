@@ -7,15 +7,15 @@ namespace COMP2139_ICE.Controllers
 {
     public class ProjectsController : Controller
     {
-        private readonly ApplicationDbContext _context;
+        private readonly ApplicationDbContext _context;            // I need
 
         public ProjectsController(ApplicationDbContext context)
         {
             _context = context;
         }
 
-        // GET: Projects
-        public async Task<IActionResult> Index()
+        // GET: Projects        
+        public async Task<IActionResult> Index()         // I need
         {
             var projects = await _context.Projects.ToListAsync();
             return View(projects);
@@ -25,7 +25,7 @@ namespace COMP2139_ICE.Controllers
         public async Task<IActionResult> Details(int id)
         {
             var project = await _context.Projects
-                .FirstOrDefaultAsync(m => m.ProjectId == id);
+                .FirstOrDefaultAsync(m => m.ProjectId == id);              // I need
 
             if (project == null)
             {
@@ -34,15 +34,15 @@ namespace COMP2139_ICE.Controllers
 
             return View(project);
         }
-
-        // GET: Projects/Create
+        // GET: Projects/Create       // I need
         public IActionResult Create()
+
         {
             return View();
         }
 
         // POST: Projects/Create
-        [HttpPost]
+        [HttpPost]                           //I need
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("ProjectId,Name,Description,StartDate,EndDate,Status")] Project project)
         {
