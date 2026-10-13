@@ -1,0 +1,31 @@
+﻿@model GBC_Travel.Models.Hotel
+
+@{
+    ViewData["Title"] = "Create Hotel";
+}
+
+<h1>Create Hotel</h1>
+
+<form asp-action="Create">
+    <div class="mb-3">
+        <label class="form-label">Hotel Name</label>
+        <input asp-for="Name" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Location</label>
+        <input asp-for="Location" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Rating</label>
+        <input asp-for="Rating" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Price Per Night</label>
+        <input asp-for="PricePerNight" class="form-control" />
+    </div>
+    <button type="submit" class="btn btn-primary">Create</button>
+</form>
+
+<div class="mt-3">
+    <a asp-action="Index">Back to List</a>
+</div>

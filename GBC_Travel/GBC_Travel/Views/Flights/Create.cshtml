@@ -1,0 +1,43 @@
+﻿@model GBC_Travel.Models.Flight
+
+@{
+    ViewData["Title"] = "Create Flight";
+}
+
+<h1>Create Flight</h1>
+
+<form asp-action="Create">
+    <div class="mb-3">
+        <label class="form-label">Flight Number</label>
+        <input asp-for="FlightNumber" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Airline</label>
+        <input asp-for="Airline" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Origin</label>
+        <input asp-for="Origin" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Destination</label>
+        <input asp-for="Destination" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Departure Time</label>
+        <input asp-for="DepartureTime" class="form-control" type="datetime-local" />
+    </div>
+    <div class="mb-3">
+        <label class="form-label">ArrivalTime</label>
+        <input asp-for="ArrivalTime" class="form-control" type="datetime-local" />
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Price</label>
+        <input asp-for="Price" class="form-control" />
+    </div>
+    <button type="submit" class="btn btn-primary">Create</button>
+</form>
+
+<div class="mt-3">
+    <a asp-action="Index">Back to List</a>
+</div>

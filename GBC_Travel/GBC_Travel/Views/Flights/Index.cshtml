@@ -1,0 +1,41 @@
+﻿
+@model IEnumerable<GBC_Travel.Models.Flight>
+
+@{
+    ViewData["Title"] = "Flights List";
+}
+
+<h1>Flights</h1>
+
+<p>
+    <a asp-action="Create">Create New Flight</a>
+</p>
+
+<table class="table">
+    <thead>
+    <tr>
+        <th>Flight Number</th>
+        <th>Origin</th>
+        <th>Destination</th>
+        <th>Departure Time</th>
+        <th>Arrival Time</th>
+        <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model) {
+        <tr>
+            <td>@item.FlightNumber</td>
+            <td>@item.Origin</td>
+            <td>@item.Destination</td>
+            <td>@item.DepartureTime</td>
+            <td>@item.ArrivalTime</td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.FlightId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.FlightId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.FlightId">Delete</a>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>
